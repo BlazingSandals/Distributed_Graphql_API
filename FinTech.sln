@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Subgraphs", "Subgraphs", "{22525A25-9C8C-4808-8BAC-9099A4A36DE1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Accounts", "Accounts", "{3290EB00-7F87-4955-90FF-032B8FA76039}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accounts", "Subgraphs\Accounts\src\Accounts.csproj", "{A275BCAE-6F14-427F-9C6B-C633DE907836}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Trades", "Trades", "{1FA662F4-61E4-4763-8485-B53C1B2E671F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trades", "Subgraphs\Trades\src\Trades.csproj", "{5C5C9B9B-45AB-4D34-BA5C-B34AF47AF111}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A275BCAE-6F14-427F-9C6B-C633DE907836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A275BCAE-6F14-427F-9C6B-C633DE907836}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A275BCAE-6F14-427F-9C6B-C633DE907836}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A275BCAE-6F14-427F-9C6B-C633DE907836}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C5C9B9B-45AB-4D34-BA5C-B34AF47AF111}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C5C9B9B-45AB-4D34-BA5C-B34AF47AF111}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C5C9B9B-45AB-4D34-BA5C-B34AF47AF111}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C5C9B9B-45AB-4D34-BA5C-B34AF47AF111}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3290EB00-7F87-4955-90FF-032B8FA76039} = {22525A25-9C8C-4808-8BAC-9099A4A36DE1}
+		{A275BCAE-6F14-427F-9C6B-C633DE907836} = {3290EB00-7F87-4955-90FF-032B8FA76039}
+		{1FA662F4-61E4-4763-8485-B53C1B2E671F} = {22525A25-9C8C-4808-8BAC-9099A4A36DE1}
+		{5C5C9B9B-45AB-4D34-BA5C-B34AF47AF111} = {1FA662F4-61E4-4763-8485-B53C1B2E671F}
+	EndGlobalSection
+EndGlobal

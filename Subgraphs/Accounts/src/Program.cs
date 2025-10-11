@@ -1,7 +1,11 @@
+using FinTech;
+using HotChocolate;
+
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services
-    .AddGraphQLServer()
+builder
+    .Services.AddGraphQLServer()
+    .AddDataLoader<FinTech.Dataloaders.AccountsDataLoader>()
     .AddQueryType<Query>();
 
 var app = builder.Build();

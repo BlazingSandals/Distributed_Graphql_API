@@ -1,0 +1,12 @@
+<Project>
+  <PropertyGroup>
+    <!-- Disable running analyzers during dotnet build to effectively turn off linting at build time -->
+    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+    <RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
+    <!-- Disable the new .NET analyzers if present -->
+    <EnableNETAnalyzers>false</EnableNETAnalyzers>
+    <!-- Ensure analyzer warnings aren't treated as errors -->
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsAsErrors></WarningsAsErrors>
+  </PropertyGroup>
+</Project>

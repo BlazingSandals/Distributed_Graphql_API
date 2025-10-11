@@ -3,10 +3,10 @@
 }
 
 type Query {
-  review: Review!
+  trades: Trade!
 }
 
-type Review {
+type Trade {
   id: Int!
-  name: String!
+  name: String
 }
