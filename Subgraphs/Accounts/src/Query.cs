@@ -1,25 +1,44 @@
-using FinTech.Dataloaders;
-using FinTech.Models;
+using FinTech.Accounts.Dataloaders;
+using FinTech.Accounts.Models;
+using FinTech.Accounts.Repository;
+using System.Collections;
 
-namespace FinTech;
+internal static class ProductDataLoader
+{
+    [DataLoader]
+    public static async Task<Dictionary<int, Account>> GetProductByIdAsync(
+        IReadOnlyList<int> productIds,
+        FinTechDbContext context,
+        CancellationToken cancellationToken)
+        => await context.Accounts
+            .Where(t => productIds.Contains(t.AccountId))
+            .ToDictionaryAsync(t => t.Id, cancellationToken);
+}
 
 public class Query
 {
-    public async Task<Account> GetAccountById(
+    public async Task<Account?> GetProductByIdAsync(
         string id,
-        AccountsDataLoader accountsDataLoader,
-        CancellationToken cancellationToken
-    )
-    {
-        // The DataLoader will batch multiple calls to LoadAsync for the same product IDs
-        // into a single call to LoadBatchAsync in ProductDataLoader.
-        var result = await accountsDataLoader.LoadAsync(id, cancellationToken);
-        return null;
-    }
-
-    // public async Task<Account?> GetAccountsIdAsync(
-    //     string id,
-    //      [DataLoader] GetAccountsByIdAsync (productById,
-    //     CancellationToken cancellationToken)
-    //         => await productById.LoadAsync(id, cancellationToken);
+        GetProductByIdAsync productById,
+        CancellationToken cancellationToken)
+        => await productById.LoadAsync(id, cancellationToken);
 }
+
+
+
+
+
+
+// public class Query
+// {
+//     public async Task<Account?> GetAccountById(
+//         string id,
+//         AccountsDataLoader accountsDataLoader,
+//         CancellationToken cancellationToken
+//     )
+//     {
+//         // The DataLoader will batch multiple calls to LoadAsync for the same product IDs
+//         // into a single call to LoadBatchAsync in ProductDataLoader.
+//         return await accountsDataLoader.LoadAsync(id, cancellationToken);
+//     }
+// }

@@ -3,10 +3,19 @@
 }
 
 type Account {
-  id: Int!
-  name: String!
+  accountId: Int!
+  username: String!
+  email: String!
+  trades: [Trade!]!
 }
 
 type Query {
-  account: Account!
+  accountById(id: String!): Account!
+}
+
+type Trade {
+  tradeId: Int!
+  accountId: Int!
+  symbol: String!
+  amount: Int!
 }

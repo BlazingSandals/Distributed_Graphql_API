@@ -1,4 +1,4 @@
-using FinTech.Models;
+using FinTech.Trades.Models;
 
 public class Query
 {

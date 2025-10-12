@@ -1,9 +1,14 @@
-using FinTech.Repository;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using FinTech.Accounts.Models;
+using FinTech.Accounts.Repository;
 using Microsoft.EntityFrameworkCore;
 
-namespace FinTech.Dataloaders;
+namespace FinTech.Accounts.Dataloaders;
 
-public class AccountsDataLoader : BatchDataLoader<int, Models.Account>
+public class AccountsDataLoader
 {
     private readonly FinTechDbContext _context;
 
@@ -13,16 +18,18 @@ public class AccountsDataLoader : BatchDataLoader<int, Models.Account>
         _context = context;
     }
 
-    protected override async Task<IReadOnlyDictionary<int, Models.Account>> LoadBatchAsync(
+    [DataLoader]
+    protected override async Task<ILookup<int, Account>> LoadGroupedBatchAsync(
         IReadOnlyList<int> keys,
         CancellationToken cancellationToken
     )
     {
         // This method will be called once with a batch of product IDs
         // to fetch all requested products in a single operation.
-        return await _context
+        var result = await _context
             .Accounts.Where(t => keys.Contains(t.AccountId))
-            .ToDictionaryAsync(t => t.AccountId, cancellationToken);
+            .ToListAsync(cancellationToken);
+
+        return result.ToLookup(t => t.AccountId);
     }
 }
-

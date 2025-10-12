@@ -1,7 +1,7 @@
-using FinTech.Repository;
+using FinTech.Trades.Repository;
 using Microsoft.EntityFrameworkCore;
 
-namespace FinTech.Dataloaders;
+namespace FinTech.Trades.Dataloaders;
 
 public class TradesDataLoader : BatchDataLoader<int, Models.Trade>
 {

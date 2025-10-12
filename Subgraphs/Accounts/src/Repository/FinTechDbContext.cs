@@ -1,7 +1,7 @@
-using Microsoft.EntityFrameworkCore; 
-using FinTech.Models;
+using FinTech.Accounts.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace FinTech.Repository;
+namespace FinTech.Accounts.Repository;
 
 public class FinTechDbContext : DbContext
 {
@@ -13,6 +13,6 @@ public class FinTechDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Account>().HasMany(c => c.Trades);
+        modelBuilder.Entity<Models.Account>().HasMany(c => c.Trades);
     }
 }

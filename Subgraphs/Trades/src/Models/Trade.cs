@@ -1,4 +1,4 @@
-namespace FinTech.Models;
+namespace FinTech.Trades.Models;
 
 public class Trade
 {

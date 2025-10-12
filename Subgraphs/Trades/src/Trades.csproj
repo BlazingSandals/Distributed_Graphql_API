@@ -10,6 +10,7 @@
     <PackageReference Include="HotChocolate.AspNetCore" Version="13.9.7" />
     <PackageReference Include="HotChocolate.AspNetCore.CommandLine" Version="13.9.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.9" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
   </ItemGroup>
 
 </Project>
